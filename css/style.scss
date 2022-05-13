@@ -1,0 +1,297 @@
+// Цвета
+$dark-color-background: #222222;
+$light-color-background: #F8F8F8;
+$dark-color-text: #000000;
+$light-color-text: #FFFFFF;
+
+// Оформление текста
+@mixin text-design($weight, $size, $lheight, $color, $transform: none) {
+    // font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lheight;
+    color: $color;
+    text-transform: $transform;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 375px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.page-header {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    background: $dark-color-background;
+
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+.page-content {
+    box-sizing: border-box;
+    width: 100%;
+
+    flex-grow: 1;
+}
+
+.page-footer {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    background: $dark-color-background;
+
+    flex-shrink: 0;
+}
+
+/* Контейнер для контента */
+.content-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 375px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px;
+    outline: 1px solid red;
+}
+
+
+// ===== Оформление шапки страницы ===== //
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    padding: 30px;
+}
+
+.header-btn-wrp {
+    width: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    align-items: center;
+}
+
+// Лого
+.header-logo {
+    @include text-design(700, 16px, 20px, $light-color-text, uppercase);
+    text-decoration: none;
+}
+
+// Корзина
+.cart-btn {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $light-color-background;
+    @include text-design(400, 16px, 20px, $dark-color-text);
+
+    &:hover {
+        border-color: $light-color-background;
+        background-color: transparent;
+        color: $light-color-text;
+    }
+
+    transition: all ease-in-out .3s;
+}
+
+// ===== Оформление шапки страницы (конец) ===== //
+
+
+// ===== Оформление блока корзины на главной странице ===== //
+
+.cart {
+    position: relative;
+}
+
+.cart-block {
+    box-sizing: border-box;
+    width: 360px;
+    background-color: $light-color-background;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    padding: 20px;
+
+    @include text-design(400, 16px, 20px, $dark-color-text);
+
+    position: absolute;
+    top: 130%;
+    right: 0;
+}
+
+.invisible {
+    display: none;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.cart-item-left-block {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    & img {
+        margin-right: 15px;
+        align-self: flex-start;
+    }
+}
+
+.cart-item-text-wrp {
+    max-width: 150px;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.cart-item-title {
+    @include text-design(700, 16px, 20px, $dark-color-text);
+}
+
+.cart-item-quantity {
+    margin-top: 5px;
+    @include text-design(300, 16px, 20px, $dark-color-text);
+}
+
+.cart-item-single-price {
+    @include text-design(200, 16px, 20px, $dark-color-text);
+}
+
+.cart-item-right-block {
+    width: 100px;
+    margin-left: 10px;
+    text-align: right;
+}
+
+.cart-item-price {
+    @include text-design(400, 16px, 20px, $dark-color-text);
+}
+
+.cart-item-del-btn {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $dark-color-background;
+
+    @include text-design(400, 16px, 20px, $light-color-text);
+    text-align: center;
+
+    &:hover {
+        border-color: $dark-color-background;
+        background-color: transparent;
+        color: $dark-color-text;
+    }
+
+    transition: all ease-in-out .3s;
+
+    margin-top: 15px;
+    padding: 5px 10px;
+}
+
+// ===== Оформление блока корзины на главной странице (конец) ===== //
+
+
+// ===== Оформление блока продуктов ===== //
+
+.products {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 100px 0;
+    background: #FFFFFF;
+}
+
+.products-list {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 30px;
+
+    list-style: none;
+}
+
+.product-item {
+    box-sizing: border-box;
+    width: 360px;
+    border-radius: 5px;
+    background: $light-color-background;
+
+    display: flex;
+    flex-direction: column;
+    // position: relative;
+}
+
+// Оформление изображения на карточке продукта
+.product-item-photo {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+// Оформление текста на карточке продукта
+.product-item-text-wrp {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.product-item-title {
+    padding: 10px 0;
+    @include text-design(700, 16px, 20px, $dark-color-text, uppercase);
+    text-align: center;
+}
+
+.product-item-price {
+    padding: 10px 0;
+    @include text-design(400, 16px, 20px, $dark-color-text);
+    text-align: center;
+}
+
+// Оформление кнопки на карточке продукта
+.product-item-buy-btn {
+    box-sizing: border-box;
+    width: 140px;
+    height: 45px;
+    border: 1px solid $dark-color-background;
+    border-radius: 5px;
+    background-color: $dark-color-background;
+
+    @include text-design(400, 16px, 20px, $light-color-text);
+    text-align: center;
+
+    &:hover {
+        border-color: $dark-color-background;
+        background-color: transparent;
+        color: $dark-color-text;
+    }
+
+    transition: all ease-in-out .3s;
+
+    display: block;
+    margin: 10px auto;
+}
+
+// ===== Оформление блока продуктов (конец) ===== //
