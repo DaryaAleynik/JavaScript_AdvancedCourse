@@ -1,0 +1,176 @@
+// Цвета
+$dark-color-background: #222222;
+$light-color-background: #F8F8F8;
+$dark-color-text: #000000;
+$light-color-text: #FFFFFF;
+
+// Оформление текста
+@mixin text-design($weight, $size, $lheight, $color, $transform: none) {
+    // font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lheight;
+    color: $color;
+    text-transform: $transform;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 375px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.page-header {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    background: $dark-color-background;
+
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+.page-content {
+    box-sizing: border-box;
+    width: 100%;
+
+    flex-grow: 1;
+}
+
+.page-footer {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    background: $dark-color-background;
+
+    flex-shrink: 0;
+}
+
+/* Контейнер для контента */
+.content-container {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 375px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px;
+    // outline: 1px solid red;
+}
+
+
+// ===== Оформление шапки страницы ===== //
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    padding: 30px;
+}
+
+.header-btn-wrp {
+    width: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    align-items: center;
+}
+
+// Лого
+.header-logo {
+    @include text-design(700, 16px, 20px, $light-color-text, uppercase);
+    text-decoration: none;
+}
+
+// ===== Оформление шапки страницы (конец) ===== //
+
+
+// ===== Оформление формы обратной связи ===== //
+
+.section-feedback {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px 25px;
+    margin: auto;
+}
+
+.feedback-form-wrp {
+    box-sizing: border-box;
+    width: 360px;
+    margin: auto;
+}
+
+.form-title {
+    @include text-design(700, 32px, 20px, $dark-color-text);
+    margin-bottom: 50px;
+}
+
+.feedback-form {
+    box-sizing: border-box;
+    width: 360px;
+}
+
+.feedback-form-title {
+    display: block;
+    margin-bottom: 10px;
+    @include text-design(700, 18px, 20px, $dark-color-text);
+}
+
+.feedback-form-field {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid $light-color-background;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background: $light-color-background;
+
+    @include text-design(300, 14px, 16px, #B1B1B1);
+}
+
+.feedback-form-btn {
+    box-sizing: border-box;
+    width: 160px;
+    height: 50px;
+    border: 1px solid $dark-color-background;
+    background: $light-color-background;
+
+    @include text-design(400, 14px, 20px, $dark-color-text, uppercase);
+    text-align: center;
+
+    &:hover {
+        border: 1px solid $light-color-background;
+        background: $dark-color-background;
+        color: $light-color-text;
+    }
+
+    &:active {
+        border: 1px solid $dark-color-background;
+        background: $light-color-background;
+        ;
+        color: $dark-color-text;
+    }
+
+    display: block;
+    margin: 20px auto;
+}
+
+.field-invalid {
+    border: 2px solid red;
+}
+
+// ===== Оформление формы обратной связи (конец) ===== //
