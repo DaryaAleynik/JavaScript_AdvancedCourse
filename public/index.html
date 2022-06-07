@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение Normalize.css -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- Подключение стилей -->
+    <link href="css/style.css" rel="stylesheet">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Шапка страницы -->
+        <header class="page-header content-container">
+            <div class="header-content">
+                <!-- Лого + Поиск -->
+                <div class="header-btn-wrp">
+                    <a href="index.html" class="header-logo">E-shop</a>
+                    <search></search>
+                </div>
+
+                <!-- Кнопка "Корзина" -->
+                <div class="header-btn-wrp">
+                    <cart ref="cart"></cart>
+                </div>
+            </div>
+        </header>
+
+        <!-- Наполнение страницы -->
+        <main class="page-content content-container">
+            <products ref="products"></products>
+        </main>
+
+        <!-- Подвал страницы -->
+        <footer class="page-footer content-container">
+        </footer>
+
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/productComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
+    <script src="js/searchComponent.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
