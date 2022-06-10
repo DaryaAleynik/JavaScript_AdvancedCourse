@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Подключение шрифтов ("Lato") -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Подключение Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Shop</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- Шапка -->
+        <header-comp ref="showCart"></header-comp>
+        <cart-comp ref="cart"></cart-comp>
+
+        <main class="page-content">
+
+            <!-- Баннер -->
+            <banner-comp></banner-comp>
+
+            <!-- Категории -->
+            <categories-comp></categories-comp>
+
+            <!-- Товары -->
+            <products-comp ref="products"></products-comp>
+
+            <!-- Возможности -->
+            <features-comp></features-comp>
+
+            <!-- Подписка -->
+            <subscribe-comp></subscribe-comp>
+
+        </main>
+
+        <!-- Подвал -->
+        <footer-comp></footer-comp>
+
+    </div>
+
+    <!-- Скрипты -->
+    <script src="js/components/headerComponent.js"></script>
+    <script src="js/components/cartComponent.js"></script>
+    <script src="js/components/bannerComponent.js"></script>
+    <script src="js/components/categoriesComponent.js"></script>
+    <script src="js/components/productsComponent.js"></script>
+    <script src="js/components/featuresComponent.js"></script>
+    <script src="js/components/subscribeComponent.js"></script>
+    <script src="js/components/footerComponent.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
